@@ -9,13 +9,17 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { DashboardComponent } from './component/dashboard/dashboard.component';
 import { UserDetailsComponent } from './component/user-details/user-details.component';
 import { UserListComponent } from './component/user-list/user-list.component';
+import { LoginComponent } from './component/user/login/login.component';
+import { RegisterComponent } from './component/user/register/register.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
     UserDetailsComponent,
-    UserListComponent
+    UserListComponent,
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
