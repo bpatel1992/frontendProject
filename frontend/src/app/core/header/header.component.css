@@ -1,0 +1,39 @@
+nav {
+  background: rgb(90, 18, 225);
+  background: linear-gradient(
+    90deg,
+    rgba(90, 18, 225, 1) 0%,
+    rgba(130, 235, 235, 0.9587185215883228) 100%
+  );
+}
+
+.mat-tab-label {
+  background: rgb(166, 194, 166);
+  color: white;
+}
+/* focus style */
+.mat-tab-group.mat-primary .mat-tab-label:not(.mat-tab-disabled):focus,
+.mat-tab-group.mat-primary .mat-tab-link:not(.mat-tab-disabled):focus,
+.mat-tab-nav-bar.mat-primary .mat-tab-label:not(.mat-tab-disabled):focus,
+.mat-tab-nav-bar.mat-primary .mat-tab-link:not(.mat-tab-disabled):focus {
+  background: white;
+}
+/* ink bar style */
+.mat-tab-group.mat-primary .mat-ink-bar,
+.mat-tab-nav-bar.mat-primary .mat-ink-bar {
+  background: whitesmoke;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.mat-toolbar {
+  height: auto;
+  background: rgb(55, 225, 227);
+  background: linear-gradient(
+    0deg,
+    rgba(55, 225, 227, 1) 0%,
+    rgba(72, 99, 205, 1) 100%
+  );
+}

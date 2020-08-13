@@ -12,6 +12,9 @@ import {
   MatTabsModule,
   MatListModule,
   MatToolbarModule,
+  MatCardModule,
+  MatFormFieldModule,
+  MatInputModule,
 } from "@angular/material";
 import { FlexLayoutModule } from "@angular/flex-layout";
 import { DashboardComponent } from "./component/dashboard/dashboard.component";
@@ -20,6 +23,7 @@ import { UserListComponent } from "./component/user-list/user-list.component";
 import { LoginComponent } from "./component/user/login/login.component";
 import { RegisterComponent } from "./component/user/register/register.component";
 import { HeaderComponent } from "./core/header/header.component";
+import { ReactiveFormsModule, FormsModule } from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -42,7 +46,12 @@ import { HeaderComponent } from "./core/header/header.component";
     MatTabsModule,
     MatListModule,
     MatToolbarModule,
+    MatInputModule,
     FlexLayoutModule,
+    ReactiveFormsModule,
+    FormsModule,
+    MatCardModule,
+    MatFormFieldModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
