@@ -1,16 +1,25 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { BrowserModule } from "@angular/platform-browser";
+import { NgModule } from "@angular/core";
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatTableModule, MatIconModule, MatButtonModule, MatSidenavModule, MatTabsModule, MatListModule, MatToolbarModule } from '@angular/material'
-import { FlexLayoutModule } from '@angular/flex-layout';
-import { DashboardComponent } from './component/dashboard/dashboard.component';
-import { UserDetailsComponent } from './component/user-details/user-details.component';
-import { UserListComponent } from './component/user-list/user-list.component';
-import { LoginComponent } from './component/user/login/login.component';
-import { RegisterComponent } from './component/user/register/register.component';
+import { AppRoutingModule } from "./app-routing.module";
+import { AppComponent } from "./app.component";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import {
+  MatTableModule,
+  MatIconModule,
+  MatButtonModule,
+  MatSidenavModule,
+  MatTabsModule,
+  MatListModule,
+  MatToolbarModule,
+} from "@angular/material";
+import { FlexLayoutModule } from "@angular/flex-layout";
+import { DashboardComponent } from "./component/dashboard/dashboard.component";
+import { UserDetailsComponent } from "./component/user-details/user-details.component";
+import { UserListComponent } from "./component/user-list/user-list.component";
+import { LoginComponent } from "./component/user/login/login.component";
+import { RegisterComponent } from "./component/user/register/register.component";
+import { HeaderComponent } from "./core/header/header.component";
 
 @NgModule({
   declarations: [
@@ -19,7 +28,8 @@ import { RegisterComponent } from './component/user/register/register.component'
     UserDetailsComponent,
     UserListComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    HeaderComponent,
   ],
   imports: [
     BrowserModule,
@@ -35,6 +45,6 @@ import { RegisterComponent } from './component/user/register/register.component'
     FlexLayoutModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
