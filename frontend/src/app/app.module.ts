@@ -17,6 +17,7 @@ import { AngularMaterialModule } from "./module/material/angular-material.module
 import { httpInterceptorProviders } from "./core/interceptor/auth-interceptor";
 import { HttpClientModule } from "@angular/common/http";
 import { AlertComponent } from "./shared/alert/alert.component";
+import { LoaderComponent } from './shared/loader/loader.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { AlertComponent } from "./shared/alert/alert.component";
     RegisterComponent,
     HeaderComponent,
     AlertComponent,
+    LoaderComponent,
   ],
   imports: [
     BrowserModule,

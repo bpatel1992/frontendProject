@@ -9,10 +9,10 @@ import { TokenStorageService } from "src/app/core/services/token-storage.service
 export class HeaderComponent implements OnInit {
   currentUser: string = null;
   navLinks = [
-    { path: "", label: "Home" },
-    { path: "login", label: "Login" },
-    { path: "register", label: "Register" },
-    { path: "probability-calculator", label: "Probability calculator" },
+    { path: "home", label: "Home" },
+    { path: "user-detail", label: "User Detail" },
+    { path: "user-list", label: "User List" },
+    { path: "service", label: "Service" },
   ];
 
   constructor(public authService: TokenStorageService) {}
