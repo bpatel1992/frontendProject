@@ -1,10 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import {
-  FormGroup,
-  FormControl,
-  Validators,
-  FormBuilder,
-} from "@angular/forms";
+import { FormGroup, FormControl, Validators } from "@angular/forms";
 import { Location } from "@angular/common";
 import { AuthenticationService } from "src/app/core/services/authentication.service";
 import { SignUpInfo } from "../sign-up-info";

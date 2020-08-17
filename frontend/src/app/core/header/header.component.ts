@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewEncapsulation } from "@angular/core";
+import { TokenStorageService } from "src/app/core/services/token-storage.service";
 
 @Component({
   selector: "header",
@@ -6,6 +7,7 @@ import { Component, OnInit, ViewEncapsulation } from "@angular/core";
   styleUrls: ["./header.component.css"],
 })
 export class HeaderComponent implements OnInit {
+  currentUser: string = null;
   navLinks = [
     { path: "", label: "Home" },
     { path: "login", label: "Login" },
@@ -13,7 +15,6 @@ export class HeaderComponent implements OnInit {
     { path: "probability-calculator", label: "Probability calculator" },
   ];
 
-  constructor() {}
-
+  constructor(public authService: TokenStorageService) {}
   ngOnInit() {}
 }

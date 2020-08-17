@@ -17,10 +17,10 @@ export class AuthenticationService {
   private signupUrl = "http://localhost:8200/ecommerce/api/auth/signup";
   constructor(private httpClient: HttpClient) {}
 
-  login(userName, password): Observable<JwtResponse> {
+  login(email, password): Observable<JwtResponse> {
     return this.httpClient.post<JwtResponse>(
       this.loginUrl,
-      { userName, password },
+      { email, password },
       httpOptions
     );
   }

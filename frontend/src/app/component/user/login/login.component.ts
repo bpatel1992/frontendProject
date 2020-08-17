@@ -2,6 +2,7 @@ import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 import { ActivatedRoute, Router } from "@angular/router";
 import { AuthenticationService } from "src/app/core/services/authentication.service";
 import { OnInit, Component } from "@angular/core";
+import { TokenStorageService } from "src/app/core/services/token-storage.service";
 
 @Component({
   selector: "app-login",
@@ -17,7 +18,8 @@ export class LoginComponent implements OnInit {
     private fb: FormBuilder,
     private route: ActivatedRoute,
     private router: Router,
-    private authService: AuthenticationService
+    private authService: AuthenticationService,
+    private tokenStorage: TokenStorageService
   ) {}
   ngOnInit() {
     //this.returnUrl = this.route.snapshot.queryParams.returnUrl || "/game";
@@ -34,7 +36,16 @@ export class LoginComponent implements OnInit {
       try {
         const username = this.form.get("email").value;
         const password = this.form.get("password").value;
-        this.authService.login(username, password);
+        this.authService.login(username, password).subscribe(
+          (resp) => {
+            this.tokenStorage.saveToken(resp.accessToken);
+            this.tokenStorage.saveUsername(resp.username);
+            this.router.navigate["user-detail"];
+          },
+          (error) => {
+            this.router.navigate["login"];
+          }
+        );
       } catch (err) {
         this.loginInvalid = true;
       }
