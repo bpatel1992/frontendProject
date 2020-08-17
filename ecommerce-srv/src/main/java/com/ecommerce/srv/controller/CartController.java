@@ -7,12 +7,10 @@ import com.ecommerce.srv.model.Cart;
 
 @RestController
 public class CartController {
-	
-	@GetMapping("cart-details")
+
+	@GetMapping(ConstantController.CartController.CART_DETAILS)
 	public Cart getCartDetails() {
 		return null;
 	}
-	
-
 
 }

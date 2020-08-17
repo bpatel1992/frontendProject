@@ -28,8 +28,8 @@ import com.ecommerce.srv.repository.UserRepository;
 
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
-@RequestMapping("/api/auth")
-public class AuthRestAPIs {
+@RequestMapping(ConstantController.UserAuthorization.AUTH)
+public class UserAuthorization {
 
 	@Autowired
 	AuthenticationManager authenticationManager;
@@ -46,7 +46,7 @@ public class AuthRestAPIs {
 	@Autowired
 	JwtProvider jwtProvider;
 
-	@PostMapping("/signin")
+	@PostMapping(ConstantController.UserAuthorization.SIGN_IN)
 	public ResponseEntity<?> authenticateUser(@Valid @RequestBody LoginForm loginRequest) {
 		Authentication authentication = authenticationManager.authenticate(
 				new UsernamePasswordAuthenticationToken(loginRequest.getEmail(), loginRequest.getPassword()));
@@ -56,7 +56,7 @@ public class AuthRestAPIs {
 		return ResponseEntity.ok(new JwtResponse(jwt, userDetails.getUsername(), userDetails.getAuthorities()));
 	}
 
-	@PostMapping("/signup")
+	@PostMapping(ConstantController.UserAuthorization.SIGN_UP)
 	public ResponseEntity<?> registerUser(@Valid @RequestBody SignUpForm signUpRequest) {
 
 		if (userRepository.existsByEmail(signUpRequest.getEmail())) {
