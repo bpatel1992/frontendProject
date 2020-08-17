@@ -4,6 +4,7 @@ import { map } from "rxjs/operators";
 import { Observable } from "rxjs";
 import { SignUpInfo } from "src/app/component/user/sign-up-info";
 import { JwtResponse } from "src/app/component/user/jwt-response";
+import * as Constants from "../../common/constants";
 
 const httpOptions = {
   headers: new HttpHeaders({ "Content-Type": "application/json" }),
@@ -13,8 +14,8 @@ const httpOptions = {
   providedIn: "root",
 })
 export class AuthenticationService {
-  private loginUrl = "http://localhost:8200/ecommerce/api/auth/signin";
-  private signupUrl = "http://localhost:8200/ecommerce/api/auth/signup";
+  private loginUrl = Constants.BaseUrl + Constants.signIn;
+  private signupUrl = Constants.BaseUrl + Constants.signUp;
   constructor(private httpClient: HttpClient) {}
 
   login(email, password): Observable<JwtResponse> {
