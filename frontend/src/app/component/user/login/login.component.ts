@@ -3,6 +3,8 @@ import { ActivatedRoute, Router } from "@angular/router";
 import { AuthenticationService } from "src/app/core/services/authentication.service";
 import { OnInit, Component } from "@angular/core";
 import { TokenStorageService } from "src/app/core/services/token-storage.service";
+import { AlertComponent } from "src/app/shared/alert/alert.component";
+import { MatSnackBar } from "@angular/material";
 
 @Component({
   selector: "app-login",
@@ -19,7 +21,8 @@ export class LoginComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router,
     private authService: AuthenticationService,
-    private tokenStorage: TokenStorageService
+    private tokenStorage: TokenStorageService,
+    private alert: MatSnackBar
   ) {}
   ngOnInit() {
     //this.returnUrl = this.route.snapshot.queryParams.returnUrl || "/game";
@@ -40,10 +43,15 @@ export class LoginComponent implements OnInit {
           (resp) => {
             this.tokenStorage.saveToken(resp.accessToken);
             this.tokenStorage.saveUsername(resp.username);
-            this.router.navigate["user-detail"];
+            this.router.navigate(["/home"]);
           },
           (error) => {
-            this.router.navigate["login"];
+            this.alert.openFromComponent(AlertComponent, {
+              data: error,
+              panelClass: "pizza-party",
+              duration: 10000,
+            });
+            this.router.navigate(["login"]);
           }
         );
       } catch (err) {

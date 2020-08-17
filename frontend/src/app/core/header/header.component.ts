@@ -17,4 +17,8 @@ export class HeaderComponent implements OnInit {
 
   constructor(public authService: TokenStorageService) {}
   ngOnInit() {}
+
+  logout() {
+    this.authService.signOut();
+  }
 }
