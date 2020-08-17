@@ -4,18 +4,7 @@ import { NgModule } from "@angular/core";
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
-import {
-  MatTableModule,
-  MatIconModule,
-  MatButtonModule,
-  MatSidenavModule,
-  MatTabsModule,
-  MatListModule,
-  MatToolbarModule,
-  MatCardModule,
-  MatFormFieldModule,
-  MatInputModule,
-} from "@angular/material";
+
 import { FlexLayoutModule } from "@angular/flex-layout";
 import { DashboardComponent } from "./component/dashboard/dashboard.component";
 import { UserDetailsComponent } from "./component/user-details/user-details.component";
@@ -24,6 +13,9 @@ import { LoginComponent } from "./component/user/login/login.component";
 import { RegisterComponent } from "./component/user/register/register.component";
 import { HeaderComponent } from "./core/header/header.component";
 import { ReactiveFormsModule, FormsModule } from "@angular/forms";
+import { AngularMaterialModule } from "./module/material/angular-material.module";
+import { httpInterceptorProviders } from "./core/interceptor/auth-interceptor";
+import { HttpClientModule } from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -37,23 +29,15 @@ import { ReactiveFormsModule, FormsModule } from "@angular/forms";
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatTableModule,
-    MatIconModule,
-    MatButtonModule,
-    MatSidenavModule,
-    MatTabsModule,
-    MatListModule,
-    MatToolbarModule,
-    MatInputModule,
     FlexLayoutModule,
     ReactiveFormsModule,
     FormsModule,
-    MatCardModule,
-    MatFormFieldModule,
+    AngularMaterialModule,
   ],
-  providers: [],
+  providers: [httpInterceptorProviders],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

@@ -1,18 +1,10 @@
 package com.ecommerce.srv.model;
 
-import java.util.HashSet;
-import java.util.Set;
-
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
 import javax.persistence.Table;
-import javax.persistence.UniqueConstraint;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
@@ -22,8 +14,7 @@ import org.hibernate.annotations.NaturalId;
 import lombok.Data;
 
 @Entity
-@Table(name = "users", uniqueConstraints = { @UniqueConstraint(columnNames = { "username" }),
-		@UniqueConstraint(columnNames = { "email" }) })
+@Table(name = "tbl_users")
 @Data
 public class User {
 	@Id
@@ -32,11 +23,11 @@ public class User {
 
 	@NotBlank
 	@Size(min = 3, max = 50)
-	private String name;
+	private String firstName;
 
 	@NotBlank
 	@Size(min = 3, max = 50)
-	private String username;
+	private String lastName;
 
 	@NaturalId
 	@NotBlank
@@ -48,17 +39,16 @@ public class User {
 	@Size(min = 6, max = 100)
 	private String password;
 
-	@ManyToMany(fetch = FetchType.LAZY)
-	@JoinTable(name = "user_roles", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "role_id"))
-	private Set<Role> roles = new HashSet<>();
-
 	public User() {
 	}
 
-	public User(String name, String username, String email, String password) {
-		this.name = name;
-		this.username = username;
+	public User(@NotBlank @Size(min = 3, max = 50) String firstName, @NotBlank @Size(min = 3, max = 50) String lastName,
+			@NotBlank @Size(max = 50) @Email String email, @NotBlank @Size(min = 6, max = 100) String password) {
+		super();
+		this.firstName = firstName;
+		this.lastName = lastName;
 		this.email = email;
 		this.password = password;
 	}
+
 }

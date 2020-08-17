@@ -20,9 +20,9 @@ export class LoginComponent implements OnInit {
     private authService: AuthenticationService
   ) {}
   ngOnInit() {
-    this.returnUrl = this.route.snapshot.queryParams.returnUrl || "/game";
+    //this.returnUrl = this.route.snapshot.queryParams.returnUrl || "/game";
     this.form = this.fb.group({
-      username: ["", Validators.email],
+      email: ["", Validators.email],
       password: ["", Validators.required],
     });
     /*  if (await this.authService.checkAuthenticated()) {
@@ -32,7 +32,7 @@ export class LoginComponent implements OnInit {
   onSubmit() {
     if (this.form.valid) {
       try {
-        const username = this.form.get("username").value;
+        const username = this.form.get("email").value;
         const password = this.form.get("password").value;
         this.authService.login(username, password);
       } catch (err) {
