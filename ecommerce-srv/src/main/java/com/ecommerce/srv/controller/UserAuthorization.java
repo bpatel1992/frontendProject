@@ -58,9 +58,8 @@ public class UserAuthorization {
 
 	@PostMapping(ConstantController.UserAuthorization.SIGN_UP)
 	public ResponseEntity<?> registerUser(@Valid @RequestBody SignUpForm signUpRequest) {
-
-		if (userRepository.existsByEmail(signUpRequest.getEmail())) {
-			return new ResponseEntity<>(new ResponseMessage("Fail -> Email is already in use!"),
+		if (Boolean.TRUE.equals(userRepository.existsByEmail(signUpRequest.getEmail()))) {
+			return new ResponseEntity<>(new ResponseMessage(ConstantController.UserAuthorization.FAILURE_MESSAGE),
 					HttpStatus.BAD_REQUEST);
 		}
 
@@ -86,6 +85,7 @@ public class UserAuthorization {
 		 * user.setRoles(roles);
 		 */
 		userRepository.save(user);
-		return new ResponseEntity<>(new ResponseMessage("User registered successfully!"), HttpStatus.OK);
+		return new ResponseEntity<>(new ResponseMessage(ConstantController.UserAuthorization.SUCCESS_MESSAGE),
+				HttpStatus.OK);
 	}
 }

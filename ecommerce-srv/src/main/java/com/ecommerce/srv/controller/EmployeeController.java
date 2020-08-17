@@ -23,30 +23,30 @@ public class EmployeeController {
 	@Autowired
 	private EmployeeRepository employeeRepository;
 
-	@PostMapping("/save")
+	@PostMapping(ConstantController.EmployeeController.SAVE_EMPLOYEE)
 	public void saveEmployee(@RequestBody Employee employee) {
-		this.employeeRepository.save(employee);
+		employeeRepository.save(employee);
 	}
 
-	@GetMapping("/getemployees")
+	@GetMapping(ConstantController.EmployeeController.GET_EMPLOYEES)
 	@ResponseBody
 	public List<Employee> getEmployees() {
 		return employeeRepository.findAll();
 	}
 
-	@GetMapping("/getemployee")
+	@GetMapping(ConstantController.EmployeeController.GET_EMPLOYEE)
 	@ResponseBody
 	public Optional<Employee> getEmployeeById(@RequestParam long id) {
-		return this.employeeRepository.findById(id);
+		return employeeRepository.findById(id);
 	}
 
-	@DeleteMapping("/deleteEmployee")
+	@DeleteMapping(ConstantController.EmployeeController.DELETE_EMPLOYEE)
 	public void deleteEmployee(@RequestParam long id) {
-		this.employeeRepository.deleteById(id);
+		employeeRepository.deleteById(id);
 	}
 
-	@PostMapping("/update")
+	@PostMapping(ConstantController.EmployeeController.UPDATE_EMPLOYEE)
 	public void updateEmployee(@RequestBody Employee employee) {
-		this.employeeRepository.save(employee);
+		employeeRepository.save(employee);
 	}
 }
