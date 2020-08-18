@@ -7,10 +7,10 @@ import { Observable } from "rxjs";
   providedIn: "root",
 })
 export class UserService {
-  private loginUrl = Constants.BaseUrl + "get-employees";
+  private getEmployeesUrl = Constants.BaseUrl + Constants.getEmployees;
   constructor(private httpClient: HttpClient) {}
 
   getEmployees(): Observable<any> {
-    return this.httpClient.get(this.loginUrl);
+    return this.httpClient.get(this.getEmployeesUrl);
   }
 }

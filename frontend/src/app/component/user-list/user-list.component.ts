@@ -18,7 +18,6 @@ export class UserListComponent implements OnInit {
   }
   loadUser() {
     return this.userService.getEmployees().subscribe((users) => {
-      console.log("employee=====>" + users.name);
       this.userList = users;
     });
   }

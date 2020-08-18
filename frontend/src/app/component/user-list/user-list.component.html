@@ -31,6 +31,9 @@
                   <th>
                     Gender
                   </th>
+                  <th>
+                    Action
+                  </th>
                 </thead>
                 <tbody>
                   <tr *ngFor="let user of userList">
@@ -54,6 +57,10 @@
                     </td>
                     <td>
                       {{user.gender}}
+                    </td>
+                    <td>
+                      <i class="material-icons" style="color: #0000FF">delete</i> | <i class="material-icons"
+                        style="color: #0000FF">edit</i>
                     </td>
                   </tr>
                 </tbody>

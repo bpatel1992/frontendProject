@@ -78,7 +78,7 @@ export class RegisterComponent implements OnInit {
     this.authService.signUp(owner).subscribe(
       (res) => {
         //this is temporary, until we create our dialogs
-        this.router.navigate["login"];
+        this.router.navigate(["login"]);
       },
       (error) => {
         //temporary as well
