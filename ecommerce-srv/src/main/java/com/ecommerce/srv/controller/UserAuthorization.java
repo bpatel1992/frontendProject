@@ -49,7 +49,7 @@ public class UserAuthorization {
 	@PostMapping(ConstantController.UserAuthorization.SIGN_IN)
 	public ResponseEntity<?> authenticateUser(@Valid @RequestBody LoginForm loginRequest) {
 		Authentication authentication = authenticationManager.authenticate(
-				new UsernamePasswordAuthenticationToken(loginRequest.getEmail(), loginRequest.getPassword()));
+				new UsernamePasswordAuthenticationToken(loginRequest.getUsername(), loginRequest.getPassword()));
 		SecurityContextHolder.getContext().setAuthentication(authentication);
 		String jwt = jwtProvider.generateJwtToken(authentication);
 		UserDetails userDetails = (UserDetails) authentication.getPrincipal();
@@ -64,26 +64,8 @@ public class UserAuthorization {
 		}
 
 		// Creating user's account
-		User user = new User(signUpRequest.getFirstName(), signUpRequest.getLastName(), signUpRequest.getEmail(),
-				encoder.encode(signUpRequest.getPassword()));
-		/*
-		 * Set<Role> roles = new HashSet<>(); strRoles.forEach(role -> { switch (role) {
-		 * case "admin": Role adminRole = roleRepository.findByName(RoleName.ROLE_ADMIN)
-		 * .orElseThrow(() -> new
-		 * RuntimeException("Fail! -> Cause: User Role not find."));
-		 * roles.add(adminRole);
-		 *
-		 * break; case "pm": Role pmRole = roleRepository.findByName(RoleName.ROLE_PM)
-		 * .orElseThrow(() -> new
-		 * RuntimeException("Fail! -> Cause: User Role not find.")); roles.add(pmRole);
-		 *
-		 * break; default: Role userRole = roleRepository.findByName(RoleName.ROLE_USER)
-		 * .orElseThrow(() -> new
-		 * RuntimeException("Fail! -> Cause: User Role not find."));
-		 * roles.add(userRole); } });
-		 *
-		 * user.setRoles(roles);
-		 */
+		User user = new User(signUpRequest.getFirstName(), signUpRequest.getLastName(), signUpRequest.getUsername(),
+				signUpRequest.getEmail(), encoder.encode(signUpRequest.getPassword()));
 		userRepository.save(user);
 		return new ResponseEntity<>(new ResponseMessage(ConstantController.UserAuthorization.SUCCESS_MESSAGE),
 				HttpStatus.OK);
