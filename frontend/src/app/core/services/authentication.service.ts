@@ -18,10 +18,10 @@ export class AuthenticationService {
   private signupUrl = Constants.BaseUrl + Constants.signUp;
   constructor(private httpClient: HttpClient) {}
 
-  login(email, password): Observable<JwtResponse> {
+  login(username, password): Observable<JwtResponse> {
     return this.httpClient.post<JwtResponse>(
       this.loginUrl,
-      { email, password },
+      { username, password },
       httpOptions
     );
   }

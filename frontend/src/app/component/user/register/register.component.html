@@ -30,6 +30,12 @@
                     <mat-error *ngIf="hasError('email', 'maxlength')">You have more than 30 characters</mat-error>
                 </mat-form-field>
                 <mat-form-field>
+                    <input matInput type="email" placeholder="enter username" formControlName="username">
+                    <mat-hint align="end">Not more then 30 characters long.</mat-hint>
+                    <mat-error *ngIf="hasError('username', 'required')">username is required</mat-error>
+                    <mat-error *ngIf="hasError('username', 'maxlength')">You have more than 30 characters</mat-error>
+                </mat-form-field>
+                <mat-form-field>
                     <input matInput type="password" placeholder="enter password" formControlName="password"
                         id="password">
                     <mat-hint align="end">Not more then 8 characters long.</mat-hint>

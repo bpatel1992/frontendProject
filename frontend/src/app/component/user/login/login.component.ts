@@ -18,7 +18,7 @@ export class LoginComponent implements OnInit {
   public loginInvalid: boolean;
   private formSubmitAttempt: boolean;
   private returnUrl: string;
-  private isSpinnerEnable: boolean;
+  public isSpinnerEnable: boolean;
   constructor(
     private fb: FormBuilder,
     private route: ActivatedRoute,
@@ -29,7 +29,7 @@ export class LoginComponent implements OnInit {
   ) {}
   ngOnInit() {
     this.form = this.fb.group({
-      email: ["", Validators.email],
+      username: ["", Validators.email],
       password: ["", Validators.required],
     });
   }
@@ -37,7 +37,7 @@ export class LoginComponent implements OnInit {
     this.isSpinnerEnable = true;
     if (this.form.valid) {
       try {
-        const username = this.form.get("email").value;
+        const username = this.form.get("username").value;
         const password = this.form.get("password").value;
         this.authService.login(username, password).subscribe(
           (resp) => {
