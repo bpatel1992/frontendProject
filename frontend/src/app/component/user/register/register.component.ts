@@ -13,7 +13,6 @@ import { Router } from "@angular/router";
 export class RegisterComponent implements OnInit {
   public ownerForm: FormGroup;
   public user: SignUpInfo;
-  public form: any = {};
 
   constructor(
     private location: Location,
