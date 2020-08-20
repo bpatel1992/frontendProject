@@ -41,7 +41,7 @@ public class EmployeeController {
 	}
 
 	@DeleteMapping(ConstantController.EmployeeController.DELETE_EMPLOYEE)
-	public void deleteEmployee(@RequestParam long id) {
+	public void deleteEmployee(@RequestParam("id") long id) {
 		employeeRepository.deleteById(id);
 	}
 

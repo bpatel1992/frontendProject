@@ -22,6 +22,7 @@ import {
   MatCardModule,
   MatTabsModule,
   MatSnackBarModule,
+  MatDialogModule,
 } from "@angular/material";
 
 @NgModule({
@@ -52,6 +53,7 @@ import {
     MatToolbarModule,
     MatTabsModule,
     MatSnackBarModule,
+    MatDialogModule,
   ],
   exports: [
     MatButtonModule,
@@ -78,6 +80,7 @@ import {
     MatListModule,
     MatTabsModule,
     MatSnackBarModule,
+    MatDialogModule,
   ],
   providers: [MatDatepickerModule],
 })

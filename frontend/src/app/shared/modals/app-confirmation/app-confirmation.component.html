@@ -1,0 +1,9 @@
+<h1 mat-dialog-title>Confiramation</h1>
+<div mat-dialog-content>
+    <p>{{confirmationMsg}}</p>
+
+</div>
+<div mat-dialog-actions>
+    <button mat-button [hidden]="!isDeleteEnable" (click)="deleteUser(id)">Delete</button>
+    <button mat-button [mat-dialog-close]="data.animal" cdkFocusInitial>cancle</button>
+</div>

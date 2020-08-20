@@ -59,8 +59,11 @@
                       {{user.gender}}
                     </td>
                     <td>
-                      <i class="material-icons" style="color: #0000FF">delete</i> | <i class="material-icons"
-                        style="color: #0000FF">edit</i>
+                      <button mat-icon-button (click)="editUser(user.id)" style="color:#002984;">
+                        <mat-icon>edit</mat-icon>
+                      </button> | <button mat-icon-button (click)="deleteUser(user.id)" style="color:#002984;">
+                        <mat-icon>delete</mat-icon>
+                      </button>
                     </td>
                   </tr>
                 </tbody>
