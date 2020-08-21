@@ -35,6 +35,10 @@ export class RegisterComponent implements OnInit {
         Validators.required,
         Validators.maxLength(30),
       ]),
+      username: new FormControl("", [
+        Validators.required,
+        Validators.maxLength(30),
+      ]),
       password: new FormControl("", [
         Validators.required,
         Validators.maxLength(8),
@@ -66,6 +70,7 @@ export class RegisterComponent implements OnInit {
       firstName: ownerFormValue.firstName,
       lastName: ownerFormValue.lastName,
       email: ownerFormValue.email,
+      username: ownerFormValue.username,
       password: ownerFormValue.password,
       address: ownerFormValue.address,
     };
@@ -73,7 +78,7 @@ export class RegisterComponent implements OnInit {
     this.authService.signUp(owner).subscribe(
       (res) => {
         //this is temporary, until we create our dialogs
-        this.router.navigate["login"];
+        this.router.navigate(["login"]);
       },
       (error) => {
         //temporary as well

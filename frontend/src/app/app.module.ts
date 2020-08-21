@@ -16,6 +16,8 @@ import { ReactiveFormsModule, FormsModule } from "@angular/forms";
 import { AngularMaterialModule } from "./module/material/angular-material.module";
 import { httpInterceptorProviders } from "./core/interceptor/auth-interceptor";
 import { HttpClientModule } from "@angular/common/http";
+import { AlertComponent } from "./shared/alert/alert.component";
+import { LoaderComponent } from './shared/loader/loader.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +28,8 @@ import { HttpClientModule } from "@angular/common/http";
     LoginComponent,
     RegisterComponent,
     HeaderComponent,
+    AlertComponent,
+    LoaderComponent,
   ],
   imports: [
     BrowserModule,
@@ -38,6 +42,7 @@ import { HttpClientModule } from "@angular/common/http";
     AngularMaterialModule,
   ],
   providers: [httpInterceptorProviders],
+  entryComponents: [AlertComponent],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

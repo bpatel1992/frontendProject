@@ -33,6 +33,12 @@ public class User {
 	@NotBlank
 	@Size(max = 50)
 	@Email
+	private String username;
+
+	@NaturalId
+	@NotBlank
+	@Size(max = 50)
+	@Email
 	private String email;
 
 	@NotBlank
@@ -43,10 +49,12 @@ public class User {
 	}
 
 	public User(@NotBlank @Size(min = 3, max = 50) String firstName, @NotBlank @Size(min = 3, max = 50) String lastName,
-			@NotBlank @Size(max = 50) @Email String email, @NotBlank @Size(min = 6, max = 100) String password) {
+			@NotBlank @Size(max = 50) @Email String username, @NotBlank @Size(max = 50) @Email String email,
+			@NotBlank @Size(min = 6, max = 100) String password) {
 		super();
 		this.firstName = firstName;
 		this.lastName = lastName;
+		this.username = username;
 		this.email = email;
 		this.password = password;
 	}

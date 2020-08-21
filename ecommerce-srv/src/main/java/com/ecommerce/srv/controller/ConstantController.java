@@ -1,6 +1,8 @@
 package com.ecommerce.srv.controller;
 
-public class ConstantController {
+class ConstantController {
+	private ConstantController() {
+	}
 
 	public static class CartController {
 		public static final String CART_DETAILS = "cart-details";

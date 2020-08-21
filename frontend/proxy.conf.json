@@ -1,0 +1,8 @@
+{
+  "/ecommerce/*": {
+    "target": "http://localhost:8200",
+    "secure": false,
+    "debugLevel": "debug",
+    "changeOrigin": false
+  }
+}
