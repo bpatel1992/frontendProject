@@ -36,6 +36,7 @@ export class AppConfirmationComponent implements OnInit {
       }
     );
     this.dialogRef.close();
+    window.location.reload();
   }
 
   ngOnInit() {}
