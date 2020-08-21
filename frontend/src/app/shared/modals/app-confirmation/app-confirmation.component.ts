@@ -2,6 +2,7 @@ import { Component, OnInit, Inject } from "@angular/core";
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from "@angular/material";
 import { Router } from "@angular/router";
 import { UserService } from "src/app/core/services/user.service";
+import { Location } from "@angular/common";
 
 @Component({
   selector: "app-app-confirmation",
@@ -17,7 +18,8 @@ export class AppConfirmationComponent implements OnInit {
     public dialogRef: MatDialogRef<AppConfirmationComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any,
     private router: Router,
-    private userService: UserService
+    private userService: UserService,
+    private location: Location
   ) {
     this.id = data.userId;
     this.isDeleteEnable = true;
