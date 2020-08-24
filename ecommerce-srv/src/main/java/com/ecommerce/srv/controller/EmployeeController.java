@@ -52,6 +52,10 @@ public class EmployeeController {
 	@PostMapping(ConstantController.EmployeeController.UPDATE_EMPLOYEE)
 	@ResponseBody
 	public Employee updateEmployee(@PathVariable("id") long id, @RequestBody Employee employee) {
-		return employeeRepository.save(employee);
+		if (employeeRepository.findById(id).isPresent()) {
+			return employeeRepository.save(employee);
+		} else {
+			return null;
+		}
 	}
 }
