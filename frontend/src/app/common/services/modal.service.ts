@@ -28,7 +28,6 @@ export class ModalService {
   }
 
   public updateEmployee(employee: User): Observable<any> {
-    console.log("I came from a update modal");
     return this.httpClient.post<any>(
       `${this.updateEmployeeUrl}${employee.id}`,
       employee
@@ -36,10 +35,9 @@ export class ModalService {
   }
 
   public deleteEmployee(modalData: any) {
-    /* return this.httpClient.delete(
+    return this.httpClient.delete(
       this.deleteEmployeesUrl + "id=" + modalData.data.employeeId
-    ); */
-    console.log("I came from a update modal" + modalData.employeeId);
+    );
   }
 
   public getEmployeeById(employeeId: string): Observable<any> {

@@ -2,8 +2,8 @@ import { Component, OnInit } from "@angular/core";
 import { Observable } from "rxjs";
 import { User } from "./user";
 import { UserService } from "src/app/core/services/user.service";
-import { AppConfirmationComponent } from "src/app/shared/modals/app-confirmation/app-confirmation.component";
 import { MatDialog, MatDialogConfig } from "@angular/material";
+import { AppModalComponent } from "src/app/common/modals/app-modal/app-modal.component";
 
 @Component({
   selector: "app-user-list",
@@ -36,10 +36,7 @@ export class UserListComponent implements OnInit {
       actionButtonText: "Delete",
       employeeId: employeeId,
     };
-    const modalDialog = this.dialog.open(
-      AppConfirmationComponent,
-      dialogConfig
-    );
+    const modalDialog = this.dialog.open(AppModalComponent, dialogConfig);
   }
 
   public deleteEmployee(employeeId: number) {
@@ -59,9 +56,6 @@ export class UserListComponent implements OnInit {
       actionButtonText: "Delete",
       employeeId: employeeId,
     };
-    const modalDialog = this.dialog.open(
-      AppConfirmationComponent,
-      dialogConfig
-    );
+    const modalDialog = this.dialog.open(AppModalComponent, dialogConfig);
   }
 }

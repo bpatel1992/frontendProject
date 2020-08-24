@@ -6,4 +6,4 @@ export const getEmployees = "get-employees";
 export const getEmployeeById = "get-employee?";
 export const storeEmployee = "save-employee";
 export const deleteEmployee = "delete-employee?";
-export const updateEmployee = "update-employee";
+export const updateEmployee = "update-employee/";

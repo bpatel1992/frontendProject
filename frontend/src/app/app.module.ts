@@ -17,8 +17,8 @@ import { AngularMaterialModule } from "./module/material/angular-material.module
 import { httpInterceptorProviders } from "./core/interceptor/auth-interceptor";
 import { HttpClientModule } from "@angular/common/http";
 import { AlertComponent } from "./shared/alert/alert.component";
-import { LoaderComponent } from "./shared/loader/loader.component";
-import { AppConfirmationComponent } from "./shared/modals/app-confirmation/app-confirmation.component";
+import { AppModalComponent } from "./common/modals/app-modal/app-modal.component";
+import { AppLoaderComponent } from "./common/loader/app-loader/app-loader.component";
 
 @NgModule({
   declarations: [
@@ -30,8 +30,8 @@ import { AppConfirmationComponent } from "./shared/modals/app-confirmation/app-c
     RegisterComponent,
     HeaderComponent,
     AlertComponent,
-    LoaderComponent,
-    AppConfirmationComponent,
+    AppLoaderComponent,
+    AppModalComponent,
   ],
   imports: [
     BrowserModule,
@@ -44,7 +44,7 @@ import { AppConfirmationComponent } from "./shared/modals/app-confirmation/app-c
     AngularMaterialModule,
   ],
   providers: [httpInterceptorProviders],
-  entryComponents: [AlertComponent, AppConfirmationComponent],
+  entryComponents: [AlertComponent, AppModalComponent],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

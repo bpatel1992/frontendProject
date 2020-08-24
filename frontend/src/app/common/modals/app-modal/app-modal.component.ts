@@ -3,29 +3,24 @@ import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from "@angular/material";
 import { Router } from "@angular/router";
 import { UserService } from "src/app/core/services/user.service";
 import { Location } from "@angular/common";
-import { ModalService } from "../../services/modal.service";
 import { getEmployeeById } from "src/app/common/constants";
 import { Observable } from "rxjs";
 import { User } from "src/app/component/user-list/user";
-import {
-  FormControl,
-  Validators,
-  FormGroup,
-  FormBuilder,
-} from "@angular/forms";
+import { FormGroup, Validators, FormBuilder } from "@angular/forms";
+import { ModalService } from "src/app/common/services/modal.service";
 
 @Component({
-  selector: "app-confirmation",
-  templateUrl: "./app-confirmation.component.html",
-  styleUrls: ["./app-confirmation.component.css"],
+  selector: "app-app-modal",
+  templateUrl: "./app-modal.component.html",
+  styleUrls: ["./app-modal.component.css"],
 })
-export class AppConfirmationComponent implements OnInit {
+export class AppModalComponent implements OnInit {
   public enableEditModal: boolean;
   public enableDeleteModal: boolean;
   public employeeDetails: Observable<User>;
   public employee_form: FormGroup;
   constructor(
-    public dialogRef: MatDialogRef<AppConfirmationComponent>,
+    public dialogRef: MatDialogRef<AppModalComponent>,
     @Inject(MAT_DIALOG_DATA) public modalData: any,
     private modalService: ModalService,
     private fb: FormBuilder
