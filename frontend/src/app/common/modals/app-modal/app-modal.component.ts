@@ -5,7 +5,7 @@ import { UserService } from "src/app/core/services/user.service";
 import { Location } from "@angular/common";
 import { getEmployeeById } from "src/app/common/constants";
 import { Observable } from "rxjs";
-import { User } from "src/app/component/user-list/user";
+import { User } from "src/app/component/models/user";
 import { FormGroup, Validators, FormBuilder } from "@angular/forms";
 import { ModalService } from "src/app/common/services/modal.service";
 

@@ -3,7 +3,7 @@ import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { map } from "rxjs/operators";
 import { Observable } from "rxjs";
 import { SignUpInfo } from "src/app/component/user/sign-up-info";
-import { JwtResponse } from "src/app/component/user/jwt-response";
+import { JwtResponse } from "src/app/component/models/jwt-response";
 import * as Constants from "../../common/constants";
 
 const httpOptions = {

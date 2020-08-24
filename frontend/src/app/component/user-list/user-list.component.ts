@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { Observable } from "rxjs";
-import { User } from "./user";
+import { User } from "../models/user";
 import { UserService } from "src/app/core/services/user.service";
 import { MatDialog, MatDialogConfig } from "@angular/material";
 import { AppModalComponent } from "src/app/common/modals/app-modal/app-modal.component";
