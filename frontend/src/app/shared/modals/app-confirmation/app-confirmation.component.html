@@ -1,9 +1,66 @@
-<h1 mat-dialog-title>Confiramation</h1>
-<div mat-dialog-content>
-    <p>{{confirmationMsg}}</p>
-
+<div [hidden]=!enableDeleteModal>
+    <h1 mat-dialog-title>{{ modalData.title }}</h1>
+    <div mat-dialog-content>
+        <p>{{ modalData.description }}</p>
+    </div>
+    <div mat-dialog-actions>
+        <button mat-raised-button id="modal-action-button" (click)="actionFunction()">
+            {{ modalData.actionButtonText }}
+        </button>
+        <button mat-raised-button id="modal-cancel-button" (click)="closeModal()">
+            Go back
+        </button>
+    </div>
 </div>
-<div mat-dialog-actions>
-    <button mat-button [hidden]="!isDeleteEnable" (click)="deleteUser(id)">Delete</button>
-    <button mat-button [mat-dialog-close]="data.animal" cdkFocusInitial>cancle</button>
+
+<div class="example-container" [hidden]="!enableEditModal">
+    <mat-card>
+        <mat-card-title>Update Employee</mat-card-title>
+        <mat-card-content>
+            <form form [formGroup]="employee_form" (ngSubmit)="updateEmployee()" #resetStudentForm="ngForm" novalidate>
+                <mat-form-field>
+                    <input matInput placeholder="Name" required formControlName="name">
+                    <mat-error *ngIf="handleError('name', 'required')">
+                        You must provide a<strong> Name</strong>
+                    </mat-error>
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>Department</mat-label>
+                    <input matInput placeholder="Department" formControlName="department">
+                    <mat-error *ngIf="handleError('department', 'required')">
+                        You must provide a<strong> department</strong>
+                    </mat-error>
+                </mat-form-field><br>
+                <mat-form-field>
+                    <input matInput placeholder="Age" required name="age" formControlName="age">
+                    <mat-error *ngIf="handleError('age', 'required')">
+                        You must provide a<strong> age</strong>
+                    </mat-error>
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>City</mat-label>
+                    <input matInput placeholder="City" name="city" formControlName="city">
+                    <mat-error *ngIf="handleError('city', 'required')">
+                        You must provide a<strong> city</strong>
+                    </mat-error>
+                </mat-form-field><br>
+                <mat-form-field>
+                    <mat-label>Country</mat-label>
+                    <input matInput placeholder="Country" name="country" formControlName="country">
+                    <mat-error *ngIf="handleError('country', 'required')">
+                        You must provide a<strong> country</strong>
+                    </mat-error>
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>Gender</mat-label>
+                    <input matInput placeholder="gender" name="gender" formControlName="gender">
+                    <mat-error *ngIf="handleError('gender', 'required')">
+                        You must provide a<strong>gender</strong>
+                    </mat-error>
+                </mat-form-field><br>
+                <button mat-raised-button color="primary">Update</button>
+                <button type="button" mat-raised-button id="modal-cancel-button" (click)="closeModal()">Cancel</button>
+            </form>
+        </mat-card-content>
+    </mat-card>
 </div>

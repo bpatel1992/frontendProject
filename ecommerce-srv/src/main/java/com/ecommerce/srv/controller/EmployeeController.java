@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -16,8 +17,11 @@ import org.springframework.web.bind.annotation.RestController;
 import com.ecommerce.srv.model.Employee;
 import com.ecommerce.srv.repository.EmployeeRepository;
 
+import lombok.extern.slf4j.Slf4j;
+
 @RestController
 @CrossOrigin
+@Slf4j
 public class EmployeeController {
 
 	@Autowired
@@ -36,7 +40,7 @@ public class EmployeeController {
 
 	@GetMapping(ConstantController.EmployeeController.GET_EMPLOYEE)
 	@ResponseBody
-	public Optional<Employee> getEmployeeById(@RequestParam long id) {
+	public Optional<Employee> getEmployeeById(@RequestParam("id") long id) {
 		return employeeRepository.findById(id);
 	}
 
@@ -46,7 +50,8 @@ public class EmployeeController {
 	}
 
 	@PostMapping(ConstantController.EmployeeController.UPDATE_EMPLOYEE)
-	public void updateEmployee(@RequestBody Employee employee) {
-		employeeRepository.save(employee);
+	@ResponseBody
+	public Employee updateEmployee(@PathVariable("id") long id, @RequestBody Employee employee) {
+		return employeeRepository.save(employee);
 	}
 }

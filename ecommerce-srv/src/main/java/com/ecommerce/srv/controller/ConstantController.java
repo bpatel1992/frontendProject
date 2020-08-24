@@ -27,7 +27,7 @@ class ConstantController {
 		public static final String GET_EMPLOYEES = "/get-employees";
 		public static final String GET_EMPLOYEE = "/get-employee";
 		public static final String DELETE_EMPLOYEE = "/delete-employee";
-		public static final String UPDATE_EMPLOYEE = "/update-employee";
+		public static final String UPDATE_EMPLOYEE = "/update-employee/{id}";
 
 		private EmployeeController() {
 		}

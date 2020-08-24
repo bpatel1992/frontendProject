@@ -23,6 +23,7 @@ import {
   MatTabsModule,
   MatSnackBarModule,
   MatDialogModule,
+  MatCheckboxModule,
 } from "@angular/material";
 
 @NgModule({
@@ -54,6 +55,7 @@ import {
     MatTabsModule,
     MatSnackBarModule,
     MatDialogModule,
+    MatCheckboxModule,
   ],
   exports: [
     MatButtonModule,
@@ -81,6 +83,7 @@ import {
     MatTabsModule,
     MatSnackBarModule,
     MatDialogModule,
+    MatCheckboxModule,
   ],
   providers: [MatDatepickerModule],
 })

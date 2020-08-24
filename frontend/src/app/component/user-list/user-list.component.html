@@ -36,32 +36,32 @@
                   </th>
                 </thead>
                 <tbody>
-                  <tr *ngFor="let user of userList">
+                  <tr *ngFor="let employee of employeeList">
                     <td>
-                      {{user.id}}
+                      {{employee.id}}
                     </td>
                     <td>
-                      {{user.name}}
+                      {{employee.name}}
                     </td>
                     <td>
-                      {{user.department}}
+                      {{employee.department}}
                     </td>
                     <td>
-                      {{user.age}}
+                      {{employee.age}}
                     </td>
                     <td>
-                      {{user.city}}
+                      {{employee.city}}
                     </td>
                     <td>
-                      {{user.country}}
+                      {{employee.country}}
                     </td>
                     <td>
-                      {{user.gender}}
+                      {{employee.gender}}
                     </td>
                     <td>
-                      <button mat-icon-button (click)="editUser(user.id)" style="color:#002984;">
+                      <button mat-icon-button (click)="editEmployee(employee.id)" style="color:#002984;">
                         <mat-icon>edit</mat-icon>
-                      </button> | <button mat-icon-button (click)="deleteUser(user.id)" style="color:#002984;">
+                      </button> | <button mat-icon-button (click)="deleteEmployee(employee.id)" style="color:#002984;">
                         <mat-icon>delete</mat-icon>
                       </button>
                     </td>

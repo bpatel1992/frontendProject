@@ -3,7 +3,7 @@ import { Observable } from "rxjs";
 import { User } from "./user";
 import { UserService } from "src/app/core/services/user.service";
 import { AppConfirmationComponent } from "src/app/shared/modals/app-confirmation/app-confirmation.component";
-import { MatDialog } from "@angular/material";
+import { MatDialog, MatDialogConfig } from "@angular/material";
 
 @Component({
   selector: "app-user-list",
@@ -11,31 +11,57 @@ import { MatDialog } from "@angular/material";
   styleUrls: ["./user-list.component.css"],
 })
 export class UserListComponent implements OnInit {
-  public userList: Observable<User[]>;
+  public employeeList: Observable<User[]>;
 
   constructor(private userService: UserService, public dialog: MatDialog) {}
 
   ngOnInit() {
-    this.loadUser();
+    this.loadEmployee();
   }
-  loadUser() {
-    return this.userService.getEmployees().subscribe((users) => {
-      this.userList = users;
+  loadEmployee() {
+    return this.userService.getEmployees().subscribe((employees) => {
+      this.employeeList = employees;
     });
   }
 
-  public editUser(id: number) {
-    alert("id is===" + id);
+  public editEmployee(employeeId: number) {
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.disableClose = true;
+    dialogConfig.id = "app-confirmation";
+    dialogConfig.data = {
+      name: "updateEmployee",
+      title: "Are you sure you want to delete this product?",
+      description:
+        "If you continue, the product with ID " + +" will be deleted.",
+      actionButtonText: "Delete",
+      employeeId: employeeId,
+    };
+    const modalDialog = this.dialog.open(
+      AppConfirmationComponent,
+      dialogConfig
+    );
   }
 
-  public deleteUser(id: number) {
-    const dialogRef = this.dialog.open(AppConfirmationComponent, {
-      width: "250px",
-      data: { userId: id },
-    });
-
-    dialogRef.afterClosed().subscribe((result) => {
-      console.log("The dialog was closed");
-    });
+  public deleteEmployee(employeeId: number) {
+    const dialogConfig = new MatDialogConfig();
+    // The user can't close the dialog by clicking outside its body
+    dialogConfig.disableClose = true;
+    dialogConfig.id = "app-confirmation";
+    //dialogConfig.height = "350px";
+    //dialogConfig.width = "600px";
+    dialogConfig.data = {
+      name: "deleteEmployee",
+      title: "Are you sure you want to delete this product?",
+      description:
+        "If you continue, the product with ID " +
+        employeeId +
+        " will be deleted.",
+      actionButtonText: "Delete",
+      employeeId: employeeId,
+    };
+    const modalDialog = this.dialog.open(
+      AppConfirmationComponent,
+      dialogConfig
+    );
   }
 }
