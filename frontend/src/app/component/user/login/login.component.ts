@@ -3,10 +3,7 @@ import { ActivatedRoute, Router } from "@angular/router";
 import { AuthenticationService } from "src/app/core/services/authentication.service";
 import { OnInit, Component } from "@angular/core";
 import { TokenStorageService } from "src/app/core/services/token-storage.service";
-import { AlertComponent } from "src/app/shared/alert/alert.component";
-import { MatSnackBar } from "@angular/material";
 import { SnackbarService } from "src/app/common/alert/snackbar.service";
-import { LoaderService } from "src/app/shared/loader.service";
 
 @Component({
   selector: "app-login",

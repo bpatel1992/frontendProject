@@ -11615,7 +11615,6 @@ fieldset[disabled] .form-group.is-focused .form-check .form-check-label {
   vertical-align: middle;
   position: relative;
   top: -2px;
-  float: left;
   padding-right: 10px;
   display: inline-block;
 }
@@ -11867,7 +11866,6 @@ fieldset[disabled] .form-group.is-focused .form-check .form-check-label {
   vertical-align: middle;
   position: relative;
   top: -2px;
-  float: left;
   padding-right: 10px;
   display: inline-block;
 }
@@ -14614,7 +14612,6 @@ fieldset[disabled] .form-group .form-control {
 .navbar .navbar-toggler .navbar-toggler-icon {
   width: 22px;
   height: 2px;
-  vertical-align: middle;
   outline: 0;
   display: block;
   border-radius: 1px;
@@ -14803,7 +14800,6 @@ fieldset[disabled] .form-group .form-control {
   border-radius: 10px;
   text-align: center;
   line-height: 19px;
-  vertical-align: middle;
   display: block;
 }
 
@@ -17680,8 +17676,6 @@ fieldset[disabled] .form-group.is-focused .togglebutton label {
 }
 
 .fixed-plugin .adjustments-line p {
-  float: left;
-  display: inline-block;
   margin-bottom: 0;
   font-size: 1em;
   color: #3c4858;
@@ -20750,9 +20744,9 @@ Copyright (c) 2015 Daniel Eden
     display: none;
   }
 
-  .navbar-fixed-top {
+ /*  .navbar-fixed-top {
     -webkit-backface-visibility: hidden;
-  }
+  } */
 
   #bodyClick {
     height: 100%;
