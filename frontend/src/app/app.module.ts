@@ -19,6 +19,7 @@ import { HttpClientModule } from "@angular/common/http";
 import { AlertComponent } from "./shared/alert/alert.component";
 import { AppModalComponent } from "./common/modals/app-modal/app-modal.component";
 import { AppLoaderComponent } from "./common/loader/app-loader/app-loader.component";
+import { SideNavBarListComponent } from './core/side-nav-bar-list/side-nav-bar-list.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { AppLoaderComponent } from "./common/loader/app-loader/app-loader.compon
     AlertComponent,
     AppLoaderComponent,
     AppModalComponent,
+    SideNavBarListComponent,
   ],
   imports: [
     BrowserModule,
