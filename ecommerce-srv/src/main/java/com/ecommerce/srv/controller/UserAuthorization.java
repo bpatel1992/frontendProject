@@ -46,6 +46,12 @@ public class UserAuthorization {
 	@Autowired
 	JwtProvider jwtProvider;
 
+	/**
+	 * This rest point authorize user and set the token in header.
+	 *
+	 * @param loginRequest
+	 * @return
+	 */
 	@PostMapping(ConstantController.UserAuthorization.SIGN_IN)
 	public ResponseEntity<?> authenticateUser(@Valid @RequestBody LoginForm loginRequest) {
 		Authentication authentication = authenticationManager.authenticate(
@@ -56,6 +62,12 @@ public class UserAuthorization {
 		return ResponseEntity.ok(new JwtResponse(jwt, userDetails.getUsername(), userDetails.getAuthorities()));
 	}
 
+	/**
+	 * This rest point is used for register user in database
+	 * 
+	 * @param signUpRequest
+	 * @return
+	 */
 	@PostMapping(ConstantController.UserAuthorization.SIGN_UP)
 	public ResponseEntity<?> registerUser(@Valid @RequestBody SignUpForm signUpRequest) {
 		if (Boolean.TRUE.equals(userRepository.existsByEmail(signUpRequest.getEmail()))) {
