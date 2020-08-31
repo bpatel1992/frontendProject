@@ -1,7 +1,8 @@
 import { Component, OnInit, Output, EventEmitter } from "@angular/core";
+import { MatListItem } from "@angular/material";
 
 @Component({
-  selector: "app-side-nav-bar-list",
+  selector: "side-nav-bar-list",
   templateUrl: "./side-nav-bar-list.component.html",
   styleUrls: ["./side-nav-bar-list.component.css"],
 })

@@ -24,6 +24,8 @@ import {
   MatSnackBarModule,
   MatDialogModule,
   MatCheckboxModule,
+  MatMenuModule,
+  MatSidenavContent,
 } from "@angular/material";
 
 @NgModule({
@@ -56,6 +58,8 @@ import {
     MatSnackBarModule,
     MatDialogModule,
     MatCheckboxModule,
+    MatSidenavModule,
+    MatMenuModule,
   ],
   exports: [
     MatButtonModule,
@@ -63,7 +67,6 @@ import {
     MatIconModule,
     MatSidenavModule,
     MatBadgeModule,
-    MatListModule,
     MatGridListModule,
     MatInputModule,
     MatFormFieldModule,
@@ -84,6 +87,8 @@ import {
     MatSnackBarModule,
     MatDialogModule,
     MatCheckboxModule,
+    MatSidenavModule,
+    MatMenuModule,
   ],
   providers: [MatDatepickerModule],
 })
