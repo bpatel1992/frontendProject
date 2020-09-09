@@ -1,12 +1,19 @@
-import { Component, OnInit, ViewEncapsulation } from "@angular/core";
+import {
+  Component,
+  OnInit,
+  ViewEncapsulation,
+  Output,
+  EventEmitter,
+} from "@angular/core";
 import { TokenStorageService } from "src/app/core/services/token-storage.service";
 
 @Component({
-  selector: "header",
+  selector: "app-header",
   templateUrl: "./header.component.html",
   styleUrls: ["./header.component.css"],
 })
 export class HeaderComponent implements OnInit {
+  @Output() public sidenavToggle = new EventEmitter();
   currentUser: string = null;
   navLinks = [
     { path: "home", label: "Home" },
@@ -21,4 +28,8 @@ export class HeaderComponent implements OnInit {
   logout() {
     this.authService.signOut();
   }
+
+  public onToggleSidenav = () => {
+    this.sidenavToggle.emit();
+  };
 }
