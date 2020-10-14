@@ -5,6 +5,7 @@ import { UserDetailsComponent } from "./component/user-details/user-details.comp
 import { UserListComponent } from "./component/user-list/user-list.component";
 import { LoginComponent } from "./component/user/login/login.component";
 import { RegisterComponent } from "./component/user/register/register.component";
+import { FileUploadComponent } from "./component/file/file-upload/file-upload.component";
 
 const routes: Routes = [
   { path: "", component: LoginComponent },
@@ -13,6 +14,7 @@ const routes: Routes = [
   { path: "user-list", component: UserListComponent },
   { path: "login", component: LoginComponent },
   { path: "register", component: RegisterComponent },
+  { path: "file-upload", component: FileUploadComponent },
 ];
 
 @NgModule({

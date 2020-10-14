@@ -4,7 +4,6 @@ import { NgModule } from "@angular/core";
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
-
 import { FlexLayoutModule } from "@angular/flex-layout";
 import { DashboardComponent } from "./component/dashboard/dashboard.component";
 import { UserDetailsComponent } from "./component/user-details/user-details.component";
@@ -19,7 +18,8 @@ import { HttpClientModule } from "@angular/common/http";
 import { AlertComponent } from "./shared/alert/alert.component";
 import { AppModalComponent } from "./common/modals/app-modal/app-modal.component";
 import { AppLoaderComponent } from "./common/loader/app-loader/app-loader.component";
-import { SideNavBarListComponent } from './core/side-nav-bar-list/side-nav-bar-list.component';
+import { SideNavBarListComponent } from "./core/side-nav-bar-list/side-nav-bar-list.component";
+import { FileUploadComponent } from "./component/file/file-upload/file-upload.component";
 
 @NgModule({
   declarations: [
@@ -34,6 +34,7 @@ import { SideNavBarListComponent } from './core/side-nav-bar-list/side-nav-bar-l
     AppLoaderComponent,
     AppModalComponent,
     SideNavBarListComponent,
+    FileUploadComponent,
   ],
   imports: [
     BrowserModule,
