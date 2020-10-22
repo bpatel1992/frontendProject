@@ -25,7 +25,6 @@ import {
   MatDialogModule,
   MatCheckboxModule,
   MatMenuModule,
-  MatSidenavContent,
   MatProgressBarModule,
   MatTreeModule,
   MatAutocompleteModule,
