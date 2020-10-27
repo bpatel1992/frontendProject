@@ -16,3 +16,26 @@ a:active {
 .navbar {
   background: #002984;
 }
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+a:hover,
+a:active {
+  color: lightgray;
+}
+
+.nav-caption {
+  display: inline-block;
+  padding-left: 6px;
+}
+
+.navbar {
+  background: #002984;
+}
+
+.mat-sidenav-content{
+  height: 655px;
+}
