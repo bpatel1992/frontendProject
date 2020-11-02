@@ -9,9 +9,20 @@ import { TokenStorageService } from "../services/token-storage.service";
 })
 export class SideNavBarListComponent implements OnInit {
   @Output() sidenavClose = new EventEmitter();
+  sidenavWidth = 4;
+  ngStyle: string;
   constructor(public authService: TokenStorageService) {}
   ngOnInit() {}
   public onSidenavClose = () => {
     this.sidenavClose.emit();
   };
+
+  increase() {
+    this.sidenavWidth = 15;
+    console.log("increase sidenav width");
+  }
+  decrease() {
+    this.sidenavWidth = 4;
+    console.log("decrease sidenav width");
+  }
 }

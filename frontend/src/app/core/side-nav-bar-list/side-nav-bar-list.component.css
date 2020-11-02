@@ -39,3 +39,7 @@ a:active {
 .mat-sidenav-content{
   height: 655px;
 }
+
+.sidenav {
+  background: #8115d3;
+}
