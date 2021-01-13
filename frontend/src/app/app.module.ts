@@ -20,6 +20,9 @@ import { AppModalComponent } from "./common/modals/app-modal/app-modal.component
 import { AppLoaderComponent } from "./common/loader/app-loader/app-loader.component";
 import { SideNavBarListComponent } from "./core/side-nav-bar-list/side-nav-bar-list.component";
 import { FileUploadComponent } from "./component/file/file-upload/file-upload.component";
+import { AuditLogComponent } from "./grid/audit-log/audit-log.component";
+import { AgGridModule } from "ag-grid-angular";
+import { ActionRenderComponent } from "./grid/action-render/action-render.component";
 
 @NgModule({
   declarations: [
@@ -35,6 +38,8 @@ import { FileUploadComponent } from "./component/file/file-upload/file-upload.co
     AppModalComponent,
     SideNavBarListComponent,
     FileUploadComponent,
+    AuditLogComponent,
+    ActionRenderComponent,
   ],
   imports: [
     BrowserModule,
@@ -45,9 +50,10 @@ import { FileUploadComponent } from "./component/file/file-upload/file-upload.co
     ReactiveFormsModule,
     FormsModule,
     AngularMaterialModule,
+    AgGridModule.withComponents([]),
   ],
   providers: [httpInterceptorProviders],
-  entryComponents: [AlertComponent, AppModalComponent],
+  entryComponents: [AlertComponent, AppModalComponent, ActionRenderComponent],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

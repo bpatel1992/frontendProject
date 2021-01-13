@@ -1,6 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 @import "./assets/css/material-dashboard.css";
+@import "../node_modules/ag-grid-community/dist/styles/ag-grid.css";
+@import "../node_modules/ag-grid-community/dist/styles/ag-theme-alpine.css";
 
 html,
 body {
@@ -16,6 +18,8 @@ body {
   color: beige;
 }
 
+
+
 primary .card-icon,
 .card .card-header-primary .card-text,
 .card .card-header-primary:not(.card-header-icon):not(.card-header-text),
@@ -24,3 +28,4 @@ primary .card-icon,
 .card.card-rotate.bg-primary .back {
   background: #002984;
 }
+
